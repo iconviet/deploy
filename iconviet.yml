@@ -1,8 +1,6 @@
 version: "3.8"
 
 networks:
-  iconloop:
-    external: true
   iconviet:
     external: true
 
@@ -14,7 +12,6 @@ services:
 
   seq:
     networks:
-      - iconloop
       - iconviet
     ports:
       - 5341
@@ -36,7 +33,6 @@ services:
     ports:
       - 1433:1433
     networks:
-      - iconloop
       - iconviet
     image: iconviet/mssql
     environment:
@@ -54,7 +50,6 @@ services:
 
   redis:
     networks:
-      - iconloop    
       - iconviet
     ports:
       - mode: host
@@ -83,7 +78,6 @@ services:
 #      - 9200
 #      - 9300
 #    networks:
-#      - iconloop    
 #      - iconviet
 #    image: iconviet/elastic
 #    environment:
@@ -127,7 +121,6 @@ services:
 
   nginx:
     networks:
-      - iconloop    
       - iconviet
     ports:
       - mode: host
@@ -154,7 +147,6 @@ services:
       - 8080:8080
       - 38888
     networks:
-      - iconloop
       - iconviet
     image: iconviet/ravendb
     environment:
@@ -194,7 +186,6 @@ services:
 
   dockupdater:
     networks:
-      - iconloop
       - iconviet
     environment:
       TZ: "Asia/Ho_Chi_Minh"
@@ -217,7 +208,6 @@ services:
 
   redis_replica:
     networks:
-      - iconloop
       - iconviet
     ports:
       - mode: host
@@ -246,7 +236,6 @@ services:
   #************
   chainalytic:
     networks:
-      - iconloop
       - iconviet
     ports:
       - mode: host
