@@ -15,7 +15,7 @@ services:
       - iconviet
     ports:
      - 5341
-      - 5342:80
+     - 5342:80
     image: iconviet/seq
     environment:
       ACCEPT_EULA: "Y"
